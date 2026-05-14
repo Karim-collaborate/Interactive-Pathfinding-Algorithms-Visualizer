@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze</title>
+    <link rel="stylesheet" href="maze.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div id="choose">CHOOSE</div>
+        <div id="dijkstra">DIJKSTRA</div>
+        <div id="dfs">DFS</div>
+        <div id="bfs">BFS</div>
+    </div>
+
+    <div class="inputs">
+        <div class="input1">
+            <p id="width_val">width: 10</p>
+            <input type="range" id="width" min="2" max="50" value="10">
+        </div>
+        
+
+        <div class="input2">
+            <p id="height_val">height: 10</p>
+            <input name="height" type="range" id="height" min="2" max="25" value="10">
+        </div>
+
+        <div class="input3">
+            <p>Animation speed</p>
+            <input name="speed" type="range" id="speed" min="100" max="5000" value="250">
+        </div>
+        
+    </div>
+    
+    <button id="show">SHOW</button>
+
+    <div class="wrap">
+        <div class="container"></div>  
+    </div>
+    <br>
+
+    <div class="notifications"></div>
+
+    <script type="module" src="./maze.js"></script>
+</body>
+</html>

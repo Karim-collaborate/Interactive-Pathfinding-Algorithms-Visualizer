@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 98%;
+}
+
+.navbar {
+    display: flex;
+    gap: 5px;
+    background: lightblue;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar div {
+    padding: 10px;
+}
+
+.navbar div:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.inputs {
+    padding : 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 700px;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    transition: 500ms;
+    text-align: center;
+}
+
+.inputs p{
+    text-align: center;
+}
+
+button {
+    margin: 5px auto;
+    display: block;
+    padding : 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, lightblue , antiquewhite);
+    border: none
+}
+
+@keyframes cooldown {
+    to {
+        width: 0;
+    }
+}
+
+.notifications {
+    position: fixed;
+    width: 25%;
+    bottom : 0;
+    right: 0;
+    z-index: 1;
+}
+
+.toast {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(
+        to right, #ff7c7c, #ffe1e1
+    );
+    gap: 16px;
+    margin: 10px;
+    animation: showup ease 800ms;
+    padding: 5px;
+    --color: #a40000;
+}
+
+.toast i:nth-child(3):hover {
+    cursor: pointer;
+}
+
+.toast i {
+    color: black;
+}
+
+.toast .content, .toast i {
+    font-size:x-large;
+}
+
+.toast::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: var(--color);
+    box-shadow: 0 0 20px var(--color);
+    animation: cooldown 5s linear 1 forwards;
+}
+
+
+@keyframes showup {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    
+    100% {
+        transform: translateX(-5%);
+        opacity: 1;
+    }
+}
+
+.toast.pathlength {
+    --color: #00a413;
+    background-image: linear-gradient(
+        to right, #7cff9b, #e1ffe6
+    );
+}
+
+.toast.noway {
+    --color: #99a400;
+    background-image: linear-gradient(
+        to right, #ffff7c, #fdffe1
+    );
+}
